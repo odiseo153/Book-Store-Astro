@@ -17,8 +17,9 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+     env:
+       plataform: aws
+       region: rd
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -27,7 +28,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: "ejemplo de acction"
-        run: echo hola a todos!
+        run: echo "hola a todos ${{env.plataform}}"
+        
+      - name: "Probando los eventos"
+        run: echo "Evento ${{toJSON(github.event)}}"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
