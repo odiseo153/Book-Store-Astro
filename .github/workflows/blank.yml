@@ -17,21 +17,25 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-     env:
-       plataform: aws
-       region: rd
+    env:
+      platform: aws
+      region: rd
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: "ejemplo de acction"
-        run: echo "hola a todos ${{env.plataform}}"
-        
-      - name: "Probando los eventos"
-        run: echo "Evento ${{toJSON(github.event)}}"
+      # Print Platform Greeting (improved step name)
+      - name: imprimiendo datos de entorno
+        run: | 
+          echo "Plataforma valor ${{ env.platform }}"
+          echo "Region valor ${{ env.region }}"
+
+      # Print Event Details 
+      - name: Detalles de eventos
+        run: echo "Event ${{ toJSON(github.event) }}"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
