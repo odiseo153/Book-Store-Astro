@@ -1,5 +1,4 @@
 import { defineCollection, z } from 'astro:content';
-import {db, defineDb, defineTable, column } from 'astro:db';
 
 const blog = defineCollection({
 	type: 'content',
@@ -14,18 +13,8 @@ const blog = defineCollection({
 	}),
 });
 
-const Comments = defineTable({
-	columns: {
-	  authorId: column.text(),
-	  postId: column.text(),
-	  body: column.text(),
-	}
-  })
-  
 
-export default defineDb({
-	tables: { Comment },
-  })
+
 
 
 export const collections = { blog };
