@@ -157,10 +157,6 @@ export default function ListaDeLibros() {
                                     </div>
                                 </div>
                             </div>
-
-
-
-
                         </div>
                     ))}
                 </div>
