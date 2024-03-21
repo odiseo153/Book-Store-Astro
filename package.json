@@ -9,7 +9,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test":"node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test":"jest"
   },
 
   "dependencies": {
