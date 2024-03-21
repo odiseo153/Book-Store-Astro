@@ -36,8 +36,11 @@ jobs:
       # Print Event Details 
       - name: Detalles de eventos
         run: echo "Event ${{ toJSON(github.event) }}"
-
-      - name: Probando Test
+      
+      - name: Instalar dependencias
+        run: npm install jest --no-save
+    
+      - name: Ejecutar pruebas
         run: npm run test
 
       # Runs a set of commands using the runners shell
